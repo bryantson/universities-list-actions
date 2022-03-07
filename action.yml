@@ -1,0 +1,13 @@
+name: 'University Search'
+description: 'Search university by country name'
+inputs:
+  country:
+    description: 'Country'
+    required: true
+    default: 'United+States'
+outputs:
+  universities:
+    description: 'List of universities'
+runs:
+  using: 'node16'
+  main: 'index.js'
