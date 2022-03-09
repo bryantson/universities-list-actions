@@ -5791,6 +5791,64 @@ function onceStrict (fn) {
 
 /***/ }),
 
+/***/ 1891:
+/***/ ((module) => {
+
+/**
+** Sort an array of JSON by a property.
+* @param  {Array} `arr` The Array to be sorted.
+* @param  {String} `prop` The Property based on what the array should be sorted.
+* @param  {String} `order` The Property based on what the array should be sorted.
+* @return {Array} Returns a sorted array.
+*/
+function sortjsonarray(arr,prop,order){
+
+  if (arr == null) {
+    return [];
+  }
+
+  if (!Array.isArray(arr)) {
+    throw new TypeError('sort-json-array expects an array.');
+  }
+
+  if (arguments.length === 1) {
+    return arr.sort();
+  }
+
+  if (arguments[2] == null || arguments[2] == "asc" ){
+    return arr.sort(compare(prop,1));
+  }
+  else if (arguments[2] == "des"){
+    return arr.sort(compare(prop,0));
+  }
+  else {
+    throw new TypeError('Wrong argument.');
+  }
+
+};
+
+function compare(attr,value){
+  if(value){
+    return function(a,b){
+      var x = (a[attr] === null) ? "" : "" + a[attr],
+      y = (b[attr] === null) ? "" : "" + b[attr];
+      return x < y ? -1 :(x > y ? 1 : 0)
+    }
+  }
+  else {
+    return function(a,b){
+      var x = (a[attr] === null) ? "" : "" + a[attr],
+      y = (b[attr] === null) ? "" : "" + b[attr];
+      return x < y ? 1 :(x > y ? -1 : 0)
+    }
+  }
+}
+
+module.exports = sortjsonarray; // let me be required
+
+
+/***/ }),
+
 /***/ 7801:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
@@ -8471,6 +8529,7 @@ var __webpack_exports__ = {};
 const core = __nccwpck_require__(5127)
 const github = __nccwpck_require__(3134)
 const http = __nccwpck_require__(3685)
+const sortJsonArray = __nccwpck_require__(1891)
 
 try {
 
@@ -8486,11 +8545,11 @@ try {
     });
 
     resp.on('end', () => {
-      var dataJSON = JSON.parse(data)
+      var dataJSON = sortJsonArray(JSON.parse(data), 'name')
       var counter = 1
 
       for(university in dataJSON) {
-        console.log(counter + ":" + dataJSON[university].name + " - " + dataJSON[university].web_pages)
+        console.log(counter + " : " + dataJSON[university].name + " - " + dataJSON[university].web_pages)
 
         counter += 1
       }
