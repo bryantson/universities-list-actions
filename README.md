@@ -44,4 +44,4 @@ As this is a simple GitHub Actions based on a public API, feel free to fork and 
 
 ### License
 
-[MIT]((https://tldrlegal.com/license/mit-license)) @ [bryantson](https://github.com/bryantson)
+[MIT](https://tldrlegal.com/license/mit-license) @ [bryantson](https://github.com/bryantson)
