@@ -20,4 +20,4 @@ jobs:
         uses: ./
         id: test
         with:
-          country: 'United States'
+          country: 'Japan'
