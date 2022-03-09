@@ -48,7 +48,7 @@ You can also print total number of univerisites with `total` output. For example
     country: ${{ github.event.inputs.country }}
 
 - name: Get the output total
-  run: echo "The total number of universities is ${{ steps.search-university.outputs.time }}"
+  run: echo "The total number of universities is ${{ steps.search-university.outputs.total }}"
 ```
 
 ### How to contribute?
