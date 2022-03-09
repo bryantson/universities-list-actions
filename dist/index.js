@@ -8473,13 +8473,12 @@ const github = __nccwpck_require__(3134)
 const http = __nccwpck_require__(3685)
 
 try {
-  console.log('Hello');
 
   const country = core.getInput("country").replace(/\s/g,"+")
 
   console.log("Country: " + country)
 
-  http.get('http://universities.hipolabs.com/search?country=United+Kingdom', (resp) => {
+  http.get('http://universities.hipolabs.com/search?country=' + country, (resp) => {
     let data = ''
 
     resp.on('data', (chunk) => {
