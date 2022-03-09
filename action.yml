@@ -1,13 +1,10 @@
-name: 'University Search'
-description: 'Search university by country name'
+name: 'Search Universities'
+description: 'Search country and print universities'
 inputs:
   country:
-    description: 'Country'
+    description: 'Country name separated with + sign'
     required: true
     default: 'United+States'
-outputs:
-  universities:
-    description: 'List of universities'
 runs:
   using: 'node16'
-  main: 'index.js'
+  main: 'dist/index.js'
