@@ -1,4 +1,4 @@
-name: 'Search Universities'
+name: 'Universities and college search in different countries'
 description: 'Search country and print universities'
 inputs:
   country:

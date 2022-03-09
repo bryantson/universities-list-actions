@@ -23,7 +23,7 @@ jobs:
     name: A job to search by university
     steps:
       - name: Checkout
-        uses: bryantson/universities-list-actions@v1.1
+        uses: bryantson/universities-list-actions@v1
         
       - name: University search
         uses: ./
