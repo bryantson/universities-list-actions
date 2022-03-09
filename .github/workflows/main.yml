@@ -1,5 +1,13 @@
 name: Test custom GitHub Action
 
+on:
+  workflow_dispatch:
+    inputs:
+      test:
+        description: Do you want to run?
+        required: true
+        default: 'Yes'
+
 jobs:
   university_search_job:
     runs-on: ubuntu-latest
