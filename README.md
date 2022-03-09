@@ -22,12 +22,12 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to search by university
     steps:
-      - name: Checkout
-        uses: bryantson/universities-list-actions@v1
+      - name: Checkout files
+        uses: actions/checkout@v2
         
       - name: University search
-        uses: ./
-        id: test
+        uses: bryantson/universities-list-actions@v1
+        id: search-university
         with:
           country: ${{ github.event.inputs.country }}
 ```
@@ -37,6 +37,19 @@ jobs:
 Everything gets printed inside a GitHub log. You can find university/college names sorted alphabetically in ascending order and their associated website links. A screenshot below shows a sample output.
 
 ![Sample output](./images/sample_output.jpg)
+
+You can also print total number of univerisites with `total` output. For example, you can add a print statement in a step like this in your Actions workflow to print that number.
+
+```yaml
+- name: University search
+  uses: bryantson/universities-list-actions@v1
+  id: search-university
+  with:
+    country: ${{ github.event.inputs.country }}
+
+- name: Get the output total
+  run: echo "The total number of universities is ${{ steps.search-university.outputs.time }}"
+```
 
 ### How to contribute?
 

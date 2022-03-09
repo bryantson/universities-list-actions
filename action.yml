@@ -1,10 +1,16 @@
 name: 'Universities and college search in different countries'
 description: 'Search country and print universities'
+branding:
+  color: 'blue'
+  icon: 'box'
 inputs:
   country:
     description: 'Country name separated with + sign'
     required: true
     default: 'United+States'
+outputs:
+  total: # total number of universities
+    description: 'Total number of colleges and universities'
 runs:
   using: 'node16'
   main: 'dist/index.js'
