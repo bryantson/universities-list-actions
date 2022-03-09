@@ -3,10 +3,10 @@ name: Test custom GitHub Action
 on:
   workflow_dispatch:
     inputs:
-      test:
-        description: Do you want to run?
+      country:
+        description: Please type in name of country.
         required: true
-        default: 'Yes'
+        default: 'United States'
 
 jobs:
   university_search_job:
@@ -20,4 +20,4 @@ jobs:
         uses: ./
         id: test
         with:
-          country: 'Japan'
+          country: ${{ github.event.inputs.country }}
