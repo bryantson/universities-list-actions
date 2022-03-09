@@ -1,6 +1,6 @@
 # Search for universities and colleges in a country
 
-This fun and useful GitHub Actions plugin lets you search for colleges and universities in a country. Thank you Hipolabs for providing free API endpoint.
+This fun and useful GitHub Actions plugin lets you search for colleges and universities in a country. Thank you Hipolabs for providing free API endpoint: `http://universities.hipolabs.com/search?country=`
 
 ### How to run?
 
@@ -23,7 +23,7 @@ jobs:
     name: A job to search by university
     steps:
       - name: Checkout
-        uses: bryantson/universities-list-actions@v1
+        uses: bryantson/universities-list-actions@v1.1
         
       - name: University search
         uses: ./
