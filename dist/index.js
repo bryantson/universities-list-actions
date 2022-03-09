@@ -8535,7 +8535,7 @@ try {
 
   const country = core.getInput("country").replace(/\s/g,"+")
 
-  console.log("Country: " + country)
+  console.log("You searched for unversities in: " + country)
 
   http.get('http://universities.hipolabs.com/search?country=' + country, (resp) => {
     let data = ''
