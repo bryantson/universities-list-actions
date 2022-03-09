@@ -8487,8 +8487,12 @@ try {
 
     resp.on('end', () => {
       var dataJSON = JSON.parse(data)
+      var counter = 1
+
       for(university in dataJSON) {
-        console.log(dataJSON[university].name + " - " + dataJSON[university].web_pages)
+        console.log(counter + ":" + dataJSON[university].name + " - " + dataJSON[university].web_pages)
+
+        counter += 1
       }
     });
   }).on("error", (err) => {
