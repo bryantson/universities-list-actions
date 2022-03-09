@@ -8553,7 +8553,7 @@ try {
         console.log(counter + " : " + dataJSON[university].name + " - " + dataJSON[university].web_pages)
         counter += 1
       }
-      core.setOutput("total",count)
+      core.setOutput("total",counter)
     });
   }).on("error", (err) => {
     console.log("Error: " + err.message)
